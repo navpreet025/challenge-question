@@ -1,0 +1,70 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOA5nSSpyubCFBz9pHZIdGB",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/navpreet025/challenge-question/blob/main/mini%20project%202\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Write a python program to sort the list of heterogeneous data.\n",
+        "e.g.\n",
+        "L = [\"Ram\", 1, \"Shyam\", 2, \"Aman\", 3]print(L)L.sort()print(L)# Above code gives error. Correct it."
+      ],
+      "metadata": {
+        "id": "anTCDqFU8jLX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "L = [\"Ram\", 1, \"Shyam\", 2, \"Aman\", 3]\n",
+        "print(\"Original list:\", L)\n",
+        "\n",
+        "# Sort with type priority (strings first, then numbers)\n",
+        "L.sort(key=lambda x: (isinstance(x, int), str(x)))\n",
+        "print(\"Sorted list:\", L)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RDis4DYC9lnl",
+        "outputId": "46989514-ae0b-4c73-e994-a51fc7070b03"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original list: ['Ram', 1, 'Shyam', 2, 'Aman', 3]\n",
+            "Sorted list: ['Aman', 'Ram', 'Shyam', 1, 2, 3]\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
